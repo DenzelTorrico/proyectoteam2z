@@ -30,7 +30,7 @@
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO</a>
                         @endif
                     @endauth
                 </div>
@@ -55,8 +55,7 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </div>
+                                NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO                                </div>
                             </div>
                         </div>
 
