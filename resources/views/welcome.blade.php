@@ -55,7 +55,7 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    <a href="/sad">CPP</a>
+                                    <a href="/test">CPP</a>
                                 </div>
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                             </div>
 
                             <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+                                <div class="mt-2 bg-red-800 dark:text-gray-400 text-sm">
                                    Laravel en proceso.
                                 </div>
                             </div>
