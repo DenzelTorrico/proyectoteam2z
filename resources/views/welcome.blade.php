@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <title>Laravel</title>
 
         <!-- Fonts -->
@@ -55,7 +55,7 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Calla o cpp
+                                    <a href="/test">CPP</a>
                                 </div>
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                             </div>
 
                             <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+                                <div class="mt-2 bg-red-800 dark:text-gray-400 text-sm">
                                    Laravel en proceso.
                                 </div>
                             </div>
