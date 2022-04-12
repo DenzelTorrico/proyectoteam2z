@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
 <body>
@@ -45,7 +46,7 @@
     </nav>
 </header>
 @yield('slot')
-<div class="flex flex-col min-h-screen">
+<div class="flex flex-col">
         <footer class="bg-blue-500 text-white mt-auto p-10 ">
             <div class="grid grid-cols-3 items-center text-lg">
                 <div class="col-span-2">
