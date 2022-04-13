@@ -1,5 +1,6 @@
 @extends("layouts.master")
 @section('slot')
+
 <div class="px-8 py-10">
     <div class="p-4">
         <h3 class="text-xl">Tus productos publicados</h3>
