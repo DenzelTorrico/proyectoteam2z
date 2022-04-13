@@ -65,10 +65,10 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded',()=>{
-            new Splide( '.splide').mount();
-            new Splide( '.splide2',{
+            new Splide( '#splide1').mount();
+            new Splide( '#splide2',{
                 type   : 'loop',
-                perPage: 1,
+                perPage: 3,
             } ).mount();
         })
     </script>

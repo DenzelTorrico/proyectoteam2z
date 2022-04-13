@@ -3,7 +3,7 @@
 @section('slot')
 
 <section>
-    <section class="splide w-full" aria-label="Splide Basic HTML Example">
+    <section id="splide1" class="splide w-full" aria-label="Splide Basic HTML Example">
         <div class="splide__track">
               <ul class="splide__list">
                   <li class="splide__slide"><img src="{{asset('image/banner_grandes.png')}}"/></li>
@@ -15,7 +15,7 @@
 </section>
 
 <section class="container mx-auto px-8 py-20">
-    <section class="splide2 w-full" aria-label="Splide Basic HTML Example">
+    <section id="splide2" class="splide w-full" aria-label="Splide Basic HTML Example">
         <div class="splide__track">
               <ul class="splide__list">
                   <li class="splide__slide">
