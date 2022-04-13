@@ -16,6 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/editProduct', function () {
+    return view('editProduct');
+});
+Route::get('/editProfile', function () {
+    return view('editProfile');
+});
+Route::get('/publishProduct', function () {
+    return view('publishProduct');
+});
 Route::get('/login', function () {
     return view('login');
 });
