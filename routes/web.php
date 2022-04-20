@@ -41,3 +41,10 @@ Route::match(['PATCH','PUT'],'/updateProfile/{id}','UserController@updateProfile
 
 Route::delete('/deleteProduct/{id}', 'ProductController@deleteProduct')->name('product.destroy');
 Route::delete('/deleteProfile/{id}','UserController@deleteProfile')->name('profile.destroy');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

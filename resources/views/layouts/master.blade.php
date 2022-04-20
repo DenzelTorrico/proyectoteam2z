@@ -1,5 +1,4 @@
 
-{{ dd(date('y-m-d h:m:s')) }}
 <!DOCTYPE html>
 <html lang="en">
 <head>
