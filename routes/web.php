@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 //* GET
 
 Route::get('/', 'ProductController@index')->name('index');
-Route::get('/editProduct/create', 'ProductController@createProduct')->name('product.create');
+Route::get('/create', 'ProductController@createProduct')->name('product.create');
+Route::get('/product/detail/{producto}', 'ProductController@detailProduct')->name('product.detail');
 Route::get('/editProduct/{id}', 'ProductController@editProduct')->name('product.edit');
 Route::get('/editProfile/{id}','UserController@editProfile')->name('profile.edit');
 Route::get('/publishProduct', 'ProductController@publishProduct')->name('product.publish');
@@ -27,8 +29,8 @@ Route::get('/register','UserController@register')->name('index.register');
 
 //? POST
 
-Route::post('/', 'ProductController@saveProduct')->name('product.save');
-Route::post('/', 'UserController@saveProfile')->name('profile.save');
+Route::post('/create', 'ProductController@saveProduct')->name('product.save');
+Route::post('/editProfile', 'UserController@saveProfile')->name('profile.save');
 
 
 // UPDATE

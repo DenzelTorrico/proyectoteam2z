@@ -66,11 +66,28 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded',()=>{
-            new Splide( '#splide1').mount();
-            new Splide( '#splide2',{
-                type   : 'loop',
-                perPage: 3,
-            } ).mount();
+            try{
+                new Splide( '#splide1').mount();
+            }catch{
+
+            }
+            try {
+                new Splide( '#splide2',{
+                    type   : 'loop',
+                    perPage: 3,
+                } ).mount();
+            } catch (error) {
+                
+            }
+            try {
+                new Splide( '#splide3',{
+                    type   : 'loop',
+                    perPage: 3,
+                } ).mount();
+            } catch (error) {
+                
+            }
+
         })
     </script>
 </body>
