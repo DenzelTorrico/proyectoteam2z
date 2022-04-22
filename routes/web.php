@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -14,39 +16,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//* GET
+Route::controller(ProductController::class)->group(function(){
+    Route::get('/','index')->name('index');
+    Route::get('/product/create', 'createProduct')->name('product.create');
+    Route::get('/product/detail/{producto}', 'detailProduct')->name('product.detail');
+    Route::get('/product/edit/{id}', 'editProduct')->name('product.edit');
+    Route::get('/product/publish', 'publishProduct')->name('product.publish');
+    Route::get('/terminos', 'terminos')->name('index.terminos');
 
-Route::get('/', 'ProductController@index')->name('index');
-Route::get('/create', 'ProductController@createProduct')->name('product.create');
-Route::get('/product/detail/{producto}', 'ProductController@detailProduct')->name('product.detail');
-Route::get('/editProduct/{id}', 'ProductController@editProduct')->name('product.edit');
-Route::get('/editProfile/{id}','UserController@editProfile')->name('profile.edit');
-Route::get('/publishProduct', 'ProductController@publishProduct')->name('product.publish');
-Route::get('/terminos', 'ProductController@terminos')->name('index.terminos');
-Route::get('/login', 'UserController@login')->name('index.login');
-Route::get('/register','UserController@register')->name('index.register');
+    Route::post('/create', 'saveProduct')->name('product.save');
+    Route::delete('/deleteProduct/{id}', 'deleteProduct')->name('product.destroy');
+    Route::put('/updateProduct/{id}', 'updateProduct')->name('product.update');
+});
+
+Route::controller(UserController::class)->group(function(){
+    Route::get('/login', 'login')->name('index.login');
+    Route::get('/register','register')->name('index.register');
+    Route::get('/profile/edit/{id}','editProfile')->name('profile.edit');
+
+    Route::post('/profile/edit', 'saveProfile')->name('profile.save');
+    Route::put('/updateProfile/{id}','updateProfile')->name('profile.update');
+    Route::delete('/deleteProfile/{id}','deleteProfile')->name('profile.destroy');
+});
 
 
-//? POST
-
-Route::post('/create', 'ProductController@saveProduct')->name('product.save');
-Route::post('/editProfile', 'UserController@saveProfile')->name('profile.save');
-
-
-// UPDATE
-
-Route::match(['PATCH','PUT'],'/updateProduct/{id}', 'ProductController@updateProduct')->name('product.update');
-Route::match(['PATCH','PUT'],'/updateProfile/{id}','UserController@updateProfile')->name('profile.update');
-
-
-//! DELETE
-
-Route::delete('/deleteProduct/{id}', 'ProductController@deleteProduct')->name('product.destroy');
-Route::delete('/deleteProfile/{id}','UserController@deleteProfile')->name('profile.destroy');
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
