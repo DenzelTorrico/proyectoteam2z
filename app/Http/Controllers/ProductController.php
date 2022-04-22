@@ -17,7 +17,8 @@ class ProductController extends Controller
 //*GET
 
     public function index(){
-        return view("index");
+        $productos = Productos::all();
+        return view("index", compact('productos'));
     }
 
     public function createProduct(){
@@ -25,13 +26,10 @@ class ProductController extends Controller
     }
 
     public function detailProduct($producto){
-        $product = Productos::findOrFail($producto);
-        $idCategoria = Categories::findOrFail($producto);
-
-        return view("product.detailProduct")->with([
-            'producto' =>  $product,
-            //'idCat' => $idCategoria,
-        ]);
+        $product = Productos::select('productos.nombre as nombre','productos.precio as precio','productos.descuento as descuento','productos.estadoproducto as estado','productos.stock as stock','productos.foto as foto','categories.nombre as categoria')->join('Categories','productos.idcategoria','=','categories.id')->where('productos.id',$producto)->get();
+        //$product = Productos::findOrFail($producto);
+        //$idCategoria = Categories::findOrFail($producto);
+        return view("product.detailProduct", compact('product'));
     }
 
     public function editProduct($id){

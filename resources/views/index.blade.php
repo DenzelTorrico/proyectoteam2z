@@ -18,46 +18,23 @@
     <section id="splide2" class="splide w-full" aria-label="Splide Basic HTML Example">
         <div class="splide__track">
               <ul class="splide__list">
-                  <li class="splide__slide">
-                    @component('components.card')
-                        @slot('title')
-                            Polo
-                        @endslot
-                        @slot('price')
-                            54
-                        @endslot
-                    @endcomponent
-                </li>
-                  <li class="splide__slide">
-                    @component('components.card')
-                        @slot('title')
-                            Polo
-                        @endslot
-                        @slot('price')
-                            54
-                        @endslot
-                    @endcomponent
-                </li>
-                  <li class="splide__slide">
-                    @component('components.card')
-                        @slot('title')
-                            Polo
-                        @endslot
-                        @slot('price')
-                            54
-                        @endslot
-                    @endcomponent
-                </li>
-                  <li class="splide__slide">
-                    @component('components.card')
-                        @slot('title')
-                            Polo
-                        @endslot
-                        @slot('price')
-                            54
-                        @endslot
-                    @endcomponent
-                </li>
+                  @foreach ($productos as $producto)
+                    <li class="splide__slide">
+                        <a href="{{ route('product.detail', $producto)}}">
+                        @component('components.card')
+                            @slot('foto')
+                                {{$producto->foto}}
+                            @endslot
+                            @slot('title')
+                                {{$producto->nombre}}
+                            @endslot
+                            @slot('price')
+                                {{$producto->precio}}
+                            @endslot
+                        @endcomponent
+                        </a>
+                    </li>
+                  @endforeach
               </ul>
         </div>
       </section>
