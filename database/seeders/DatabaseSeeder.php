@@ -14,23 +14,26 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
          //\App\Models\User::factory(10)->create();
-        /* DB::table('rol')->insert([
+         DB::table('rol')->insert([
              'nombre'=>"usuario"
          ]);
          DB::table('rol')->insert([
             'nombre'=>"administrador"
-        ]);*/
-
-        DB::table('rol')->insert([
-            'nombre'=>"administrador",
-            'created_at'=>date('y-m-d h:m:s')
-         
         ]);
-        DB::table('rol')->insert([
+
+       /* DB::table('users')->insert([
+            'name'=>"admin",
+            'email'=>"admin@hotmail.com",
+            'password'=>bcrypt("admin"),
+            'created_at'=>date('y-m-d h:m:s'),
+            
+         
+        ]);*/
+       /* DB::table('rol')->insert([
             'nombre'=>"usuario",
             'created_at'=>date('y-m-d h:m:s')
          
-        ]);
+        ]);*/
         
     }
 }
