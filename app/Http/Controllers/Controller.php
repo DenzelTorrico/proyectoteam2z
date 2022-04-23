@@ -16,17 +16,6 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     
-    public function welcome(Request $request){
-
-      /*  if($request->session()->has('usuario')){
-            $user = $request->session()->get('usuario');
-        return  view('welcome',compact('user'));
-        
-        }*/
-      // view('welcome');
-       return view('welcome');
-        
-    }
     public function login(){
         return view('login');
     }
@@ -44,9 +33,9 @@ class Controller extends BaseController
            //$request->session()->flush();
            //return $request->session()->all();
            
-           return redirect()->action([Controller::class, 'welcome']);
+            return redirect()->action([ProductController::class, 'index']);
            //return view("welcome",compact("sesion"));
-            // return "logeado";
+            
         }
         
     }
@@ -57,7 +46,7 @@ class Controller extends BaseController
         
         //return $request->session()->all();*/
         Auth::logout();
-        return redirect()->action([Controller::class, 'welcome']);
+        return redirect()->action([ProductController::class, 'index']);
     }
 
     public function register(){
@@ -81,7 +70,8 @@ class Controller extends BaseController
      
        $guardar->save();
 
-        return $guardar;
+       return redirect()->action([ProductController::class, 'index']);
+        //return $guardar;
 
     }
 }
