@@ -2,15 +2,18 @@
 <script src="https://cdn.tailwindcss.com"></script>
 @section('slot')
 
-<form class="container mx-auto px-4 grid grid-cols-2 p-5" action="">
+<form class="container mx-auto px-4 grid grid-cols-2 p-5" action="registrado" method="post">
+    @csrf
+    <input type="hidden" name="_method" value="POST" />
+   
     <div class="flex flex-col mt-7">
         <label class="text-gray-700 text-sm font-bold mb-2" for="">Nombre</label>
-        <input class="w-3/4 shadow border rounded focus:outline-none  py-2 px-3" type="text" name="Nombre" id="" placeholder="Nombre">
+        <input class="w-3/4 shadow border rounded focus:outline-none  py-2 px-3" type="text" name="name" id="" placeholder="Nombre">
     </div>
 
     <div class="flex flex-col mt-7">
         <label class="text-gray-700 text-sm font-bold mb-2" for="">Correo</label>
-        <input class="w-3/4 shadow border rounded focus:outline-none  py-2 px-3" type="text" name="correo" id="" placeholder="correo">
+        <input class="w-3/4 shadow border rounded focus:outline-none  py-2 px-3" type="text" name="email" id="" placeholder="correo">
     </div>
 
     <div class="flex flex-col mt-7">
@@ -20,7 +23,7 @@
 
     <div class="flex flex-col mt-7">
         <label class="text-gray-700 text-sm font-bold mb-2" for="">Usuario</label>
-        <input class="w-3/4 shadow border rounded focus:outline-none  py-2 px-3" type="text" name="Usuario" id="" placeholder="Usuario">
+        <input class="w-3/4 shadow border rounded focus:outline-none  py-2 px-3" type="text" name="usuario" id="" placeholder="Usuario">
     </div>
 
     <div class="flex flex-col mt-7">
@@ -30,7 +33,7 @@
 
     <div class="flex flex-col mt-7">
         <label class="text-gray-700 text-sm font-bold mb-2" for="">Contraseña</label>
-        <input class="w-3/4 shadow border rounded focus:outline-none  py-2 px-3" type="text" name="contraseña" id="" placeholder="Contraseña">
+        <input class="w-3/4 shadow border rounded focus:outline-none  py-2 px-3" type="password" name="password" id="" placeholder="Contraseña">
     </div>
 
     <div class="flex flex-col mt-7">
@@ -40,7 +43,15 @@
 
     <div class="flex flex-col mt-7">
         <label class="text-gray-700 text-sm font-bold mb-2" for="">Confirmar Contraseña</label>
-        <input class="w-3/4 shadow border rounded focus:outline-none  py-2 px-3" type="text" name="confirmcontra" id="" placeholder="Confirmar Contraseña">
+        <input class="w-3/4 shadow border rounded focus:outline-none  py-2 px-3" type="password" name="confirmcontra" id="" placeholder="Confirmar Contraseña">
+    </div>
+
+    <div class="flex flex-col mt-7">
+        <label class="text-gray-700 text-sm font-bold mb-2">ROL</label>
+        <select name="id_role" class="rounded border p-2" id="">
+            <option value="1">Usuario</option>
+            <option value="2">Administrador</option>
+        </select>
     </div>
 
     <div class="flex flex-col mt-7 col-span-2  items-center"> 

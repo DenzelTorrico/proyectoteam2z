@@ -40,8 +40,10 @@
         </div>
         <div>
             <div class="flex space-x-4">
+                @guest
                 <a href="#">Login</a>
                 <a href="#">Register</a>
+                @endguest
                 <a href="#">Mis pedidos</a>
             </div>
         </div>
