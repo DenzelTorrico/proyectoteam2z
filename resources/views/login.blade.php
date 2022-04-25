@@ -11,7 +11,10 @@
    <div class="flex flex-col w-1/4 mt-5">
     <label class="text-gray-700 text-sm font-bold mb-2" for="">Correo</label>
     <input class="shadow border rounded focus:outline-none  py-2 px-3" type="text" name="email" id="" placeholder="email">
-   </div>
+     @error("email")
+     <div class="text-red-500">{{ $message }}</div>
+     @enderror
+</div>
    
    <div class="flex flex-col w-1/4 mt-5">
         <label class="text-gray-700 text-sm font-bold mb-2" for="">Contraseña</label>
