@@ -30,6 +30,7 @@
                             @endslot
                             @slot('price')
                                 {{$producto->precio}}
+                                <a href="{{route('product.edit', $producto->id)}}">Editar</a>
                             @endslot
                         @endcomponent
                         </a>
