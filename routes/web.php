@@ -21,7 +21,7 @@ Route::get('/login', [Controller::class, 'login'])->middleware("guest");
 Route::post('/logeado', [Controller::class, 'logeado']);
 Route::get('/register', [Controller::class, 'register'])->middleware("guest");
 Route::post('/registrado', [Controller::class, 'registrado']);
-Route::get("/welcome", [Controller::class, 'welcome'])/*->middleware('auth')*/;
+//Route::get("/welcome", [Controller::class, 'welcome'])/*->middleware('auth')*/;
 Route::get("/logout",[Controller::class, 'logout']);
 
 Route::controller(ProductController::class)->group(function(){
@@ -38,17 +38,18 @@ Route::controller(ProductController::class)->group(function(){
 });
 
 Route::controller(UserController::class)->group(function(){
-    Route::get('/login', 'login')->name('index.login');
-    Route::get('/register','register')->name('index.register');
+    /*Route::get('/login', 'login')->name('index.login');
+    Route::get('/register','register')->name('index.register');*/
     Route::get('/profile/edit/{id}','editProfile')->name('profile.edit');
-
+    
     Route::post('/profile/edit', 'saveProfile')->name('profile.save');
     Route::put('/updateProfile/{id}','updateProfile')->name('profile.update');
     Route::delete('/deleteProfile/{id}','deleteProfile')->name('profile.destroy');
 });
 
 
-Auth::routes();
+/*Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+*/

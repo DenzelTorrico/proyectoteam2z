@@ -15,7 +15,7 @@
     <nav class="flex flex-wrap justify-between items-center px-5 py-2">
         <div class="flex space-x-4 items-center">
             <img src="https://res.cloudinary.com/di4pp938j/image/upload/v1649644785/test/logo_iheuew.png" alt="Logo">
-            <h1 class="text-3xl">Mercado Z</h1>
+            <a href="/" class="text-3xl">Mercado Z</a>
         </div>
         <div class="space-y-2">
             <div class="flex w-96">
@@ -41,10 +41,15 @@
         <div>
             <div class="flex space-x-4">
                 @guest
-                <a href="#">Login</a>
-                <a href="#">Register</a>
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+                @else
+                <a href="/">Bienvenido: {{Auth::user()->usuario}}</a>
+                <a href="logout">Cerrar sesion</a>
+                
                 @endguest
                 <a href="#">Mis pedidos</a>
+               
             </div>
         </div>
     </nav>
