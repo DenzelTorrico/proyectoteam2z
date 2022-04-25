@@ -10,6 +10,8 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
+use Validator;
+
 
 
 class Controller extends BaseController
@@ -23,6 +25,12 @@ class Controller extends BaseController
        /* $nombre = $request->usuario;
         $contra = $request->password;*/
         $credentials = $request->only('email', 'password');
+       $request->validate([
+           "email"=>"required|email",
+           "passsword"=>"required|password"
+       ]);
+ 
+       
 
         if (Auth::attempt($credentials)) {
             // Authentication passed...
@@ -36,6 +44,8 @@ class Controller extends BaseController
             return redirect()->action([ProductController::class, 'index']);
            //return view("welcome",compact("sesion"));
             
+        }else{
+            return redirect()->action([Controller::class, 'login']);
         }
         
     }
@@ -58,6 +68,17 @@ class Controller extends BaseController
 
        // $ingresado = $request->all();
        // $guardar=User::create([$request->all()]);
+       $request->validate([
+        "name"=>"required",
+      "email"=>"required|email",
+     "passsword"=>"required",
+      'confirmcontra'=>'required|same:password',
+      "usuario"=>"required",
+      "apellidos"=>"required",
+      "telefono"=>"required|numeric",
+      "direccion"=>"required"
+
+    ]);
        $guardar = new User;
        $guardar->name = $request->name;
        $guardar->email = $request->email;
