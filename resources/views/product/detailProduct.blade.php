@@ -31,6 +31,8 @@
                 <div>
                     <span class="text-green-500">Descuento: </span> <span>- S/.{{ $prod->descuento }}</span>
                 </div>
+                <div>
+                </div>
             </div>
         </section>
             @endforeach

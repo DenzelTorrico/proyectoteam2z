@@ -34,7 +34,7 @@ Route::controller(ProductController::class)->group(function(){
 
     Route::post('/create', 'saveProduct')->name('product.save');
     Route::delete('/deleteProduct/{id}', 'deleteProduct')->name('product.destroy');
-    Route::put('/updateProduct/{id}', 'updateProduct')->name('product.update');
+    Route::put('/updateProduct/{producto}', 'updateProduct')->name('product.update');
 });
 
 Route::controller(UserController::class)->group(function(){

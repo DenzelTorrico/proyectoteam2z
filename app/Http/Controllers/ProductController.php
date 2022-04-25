@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Categories;
 use App\Models\Productos;
+use Illuminate\Http\Request;
+
 //use Illuminate\Http\Request;
 //use Illuminate\Support\Facades\DB;
 
@@ -22,7 +24,8 @@ class ProductController extends Controller
     }
 
     public function createProduct(){
-        return view("product.createProduct");
+        $categories = Categories::all();
+        return view("product.createProduct",compact('categories'));
     }
 
     public function detailProduct($producto){
@@ -32,8 +35,10 @@ class ProductController extends Controller
         return view("product.detailProduct", compact('product'));
     }
 
-    public function editProduct($id){
-        return view("product.editProduct");
+    public function editProduct($producto){
+        $producto = Productos::find($producto);
+        $categories = Categories::all();
+        return view("product.editProduct", compact('producto','categories'));
     }
 
     public function publishProduct(){
@@ -47,16 +52,39 @@ class ProductController extends Controller
 
 //? POST
 
-    public function saveProduct(){
-        $producto = Productos::create(request()->all());
+    public function saveProduct(Request $request){
+
+        $request->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required|min:20',
+            'precio' => 'required',
+            'descuento' => '',
+            'estadoProducto' => 'required',
+            'stock' => 'required',
+            'foto' => 'url',
+            'idcategoria' => 'required',
+        ]);
+
+        $producto = Productos::create($request->all());
         return redirect()->route('index');
     }
 
 
 // UPDATE
 
-    public function updateProduct($id){
-        //
+    public function updateProduct(Request $request,Productos $producto){
+        $request->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required|min:20',
+            'precio' => 'required',
+            'descuento' => '',
+            'estadoProducto' => 'required',
+            'stock' => 'required',
+            'foto' => 'url',
+            'idcategoria' => 'required',
+        ]);
+        $producto -> update($request->all());
+        return redirect()->route('index');
     }
 
 
