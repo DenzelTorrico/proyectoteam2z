@@ -23,6 +23,7 @@ Route::get('/register', [Controller::class, 'register'])->middleware("guest");
 Route::post('/registrado', [Controller::class, 'registrado']);
 //Route::get("/welcome", [Controller::class, 'welcome'])/*->middleware('auth')*/;
 Route::get("/logout",[Controller::class, 'logout']);
+route::get("/search",[Controller::class, 'search']);
 
 Route::controller(ProductController::class)->group(function(){
     Route::get('/','index')->name('index');

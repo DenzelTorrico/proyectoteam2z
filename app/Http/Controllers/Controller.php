@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categories;
+use App\Models\Productos;
 use App\Models\Rols;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -20,6 +22,12 @@ class Controller extends BaseController
     
     public function login(){
         return view('login');
+    }
+    public function search(Request $request){
+        $categories = Categories::all();
+        $buscador = $request->buscador;
+        $buscar = Productos::where("nombre","LIKE","%$buscador%")->get();
+        return view('search',compact("buscar","categories"));
     }
     public function logeado(Request $request){
        /* $nombre = $request->usuario;
