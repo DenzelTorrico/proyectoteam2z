@@ -29,7 +29,7 @@ class ProductController extends Controller
     }
 
     public function detailProduct($producto){
-        $product = Productos::select('productos.nombre as nombre','productos.precio as precio','productos.descuento as descuento','productos.estadoproducto as estado','productos.stock as stock','productos.foto as foto','categories.nombre as categoria')->join('Categories','productos.idcategoria','=','categories.id')->where('productos.id',$producto)->get();
+        $product = Productos::select('productos.nombre as nombre','productos.precio as precio','productos.descuento as descuento','productos.estadoproducto as estado','productos.stock as stock','productos.foto as foto','categories.nombre as categoria')->join('categories','productos.idcategoria','=','categories.id')->where('productos.id',$producto)->get();
         //$product = Productos::findOrFail($producto);
         //$idCategoria = Categories::findOrFail($producto);
         return view("product.detailProduct", compact('product'));

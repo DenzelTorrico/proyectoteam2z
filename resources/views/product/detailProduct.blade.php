@@ -29,7 +29,7 @@
                    <span class="text-green-500">Precio: </span>    <span>S/. {{ $prod->precio }}</span><br/>
                 </div>
                 <div>
-                    <span class="text-green-500">Descuento: </span> <span>- S/.{{ $prod->descuento }}</span>
+                    <span class="text-green-500">Descuento: </span> <span> S/.{{ $prod->descuento }}</span>
                 </div>
                 <div>
                 </div>
