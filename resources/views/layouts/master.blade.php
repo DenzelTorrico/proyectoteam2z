@@ -17,19 +17,24 @@
             <img src="https://res.cloudinary.com/di4pp938j/image/upload/v1649644785/test/logo_iheuew.png" alt="Logo">
             <a href="/" class="text-3xl">Mercado Z</a>
         </div>
+
         <div class="space-y-2">
+            <form action="/search" method="get">
             <div class="flex w-96">
                 <input
                   class="bg-white text-gray-600 text-sm rounded-l-md border-r-2 outline-none border-gray-500 block w-full p-2.5"
                   type="text"
                   placeholder="Buscar"
-                  aria-label="Search"/>
-                  <button class="bg-white rounded-r-md px-3 py-2">
+                  aria-label="Search"
+                  name="buscador"
+                  />
+                  <button type="submit" class="bg-white rounded-r-md px-3 py-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search w-5 h-5 text-gray-600" viewBox="0 0 16 16">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                     </svg>
                   </button>
               </div>
+              </form>
               <div>
                   <div class="flex space-x-4">
                       <a href="#">Historial</a>
