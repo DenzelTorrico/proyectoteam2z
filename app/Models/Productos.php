@@ -18,6 +18,7 @@ class Productos extends Model
         'stock',
         'foto',
         'idcategoria',
+        'iduser',
     ];
 
 }

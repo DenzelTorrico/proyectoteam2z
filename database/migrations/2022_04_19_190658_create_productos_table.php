@@ -24,6 +24,8 @@ class CreateProductosTable extends Migration
             $table->string('foto');
             $table->unsignedBigInteger('idcategoria');
             $table->foreign('idcategoria')->references('id')->on('categories');
+            $table->unsignedBigInteger('iduser');
+            $table->foreign('iduser')->references('id')->on('users');
             $table->timestamps();
         });
     }
