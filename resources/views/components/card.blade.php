@@ -1,5 +1,5 @@
 <div class="shadow-lg rounded-lg bg-white p-2 cursor-pointer hover:shadow-2xl">
-        <img src="{{$foto}}" class="w-full" alt="Polo">
+        <img src="{{$foto}}" class="w-full bg-cover" alt="Polo">
         <hr>
         <h4 class="text-xl font-bold">{{ $title }}</h4>
         <span class="text-green-500 text-xs font-bold">Envio gratis</span>
