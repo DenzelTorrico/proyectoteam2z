@@ -22,6 +22,7 @@ class ProductosFactory extends Factory
             'stock' => $this->faker->numberBetween(0,150),
             'foto' => $this->faker->imageUrl(),
             'idcategoria' => $this->faker->randomElement([1,2]),
+            'iduser' => $this->faker->randomElement([1,2]),
         ];
     }
 }
