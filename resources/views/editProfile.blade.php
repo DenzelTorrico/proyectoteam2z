@@ -22,22 +22,44 @@
         <div class="w-7/12 space-y-2">
             <h5>Información personal</h5>
             <hr>
-            <div>
-                <h5>Categoría</h5>
-                <input type="text" class="border-gray-600/50 py-1 px-2 rounded-md outline-none border-[1px] w-full" aria-label="categoria">
-            </div>
-            <div>
-                <h5>Categoría</h5>
-                <input type="text" class="border-gray-600/50 py-1 px-2 rounded-md outline-none border-[1px] w-full" aria-label="categoria">
-            </div>
-            <div>
-                <h5>Categoría</h5>
-                <input type="text" class="border-gray-600/50 py-1 px-2 rounded-md outline-none border-[1px] w-full" aria-label="categoria">
-            </div>
-            <div class="flex justify-end space-x-5">
-                <button class="bg-[#FF866B] px-7 py-1 rounded-md text-white">Cancelar</button>
-                <button class="bg-[#0078D4] px-7 py-1 rounded-md text-white">Guardar</button>
-            </div>
+            <form action="{{ route('profile.update',$profile) }}" method="POST">
+                @csrf
+                @method('put')
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label>Nombre</label>
+                        <input name="nombre" type="text" class="border-gray-600/50 p-1 rounded-md outline-none border-[1px] w-full" aria-label="nombre" value="{{ old('nombre', $profile->nombre) }}">
+                        @error('nombre')
+                            <span class="text-red-500 text-sm">{{$message}}</span><br>
+                        @enderror
+                    </div>
+                    <div>
+                        <label>Apellidos</label>
+                        <input name="apellidos" type="text" class="border-gray-600/50 p-1 rounded-md outline-none border-[1px] w-full" aria-label="apellidos" value="{{ old('apellidos', $profile->apellidos) }}">
+                        @error('apellidos')
+                            <span class="text-red-500 text-sm">{{$message}}</span><br>
+                        @enderror
+                    </div>
+                    <div>
+                        <label>Telefono</label>
+                        <input name="telefono" type="text" class="border-gray-600/50 p-1 rounded-md outline-none border-[1px] w-full" aria-label="telefono" value="{{ old('telefono', $profile->telefono) }}">
+                        @error('estadoProducto')
+                            <span class="text-red-500 text-sm">{{$message}}</span><br>
+                        @enderror
+                    </div>
+                    <div>
+                        <label>Dirección</label>
+                        <input name="direccion" type="text" class="border-gray-600/50 p-1 rounded-md outline-none border-[1px] w-full" aria-label="direccion" value="{{ old('direccion', $profile->direccion) }}">
+                        @error('descuento')
+                            <span class="text-red-500 text-sm">{{$message}}</span><br>
+                        @enderror
+                    </div>
+                </div>
+                <div class="flex justify-end space-x-4">
+                    <button class="text-red-500">Cancelar</button>
+                    <input type="submit" class="text-green-500 cursor-pointer" value="Enviar"/>
+                </div>
+            </form>
         </div>
     </div>
 </div>

@@ -2,22 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
 //* GET
 
-    public function login(){
-        return view('login');
-    }
-
-    public function register(){
-        return view('register');
-    }
 
     public function editProfile($id){
-        return view('editProfile');
+        $profile = User::find($id);
+        return view('editProfile',compact('profile'));
     }
 
 
@@ -30,8 +25,15 @@ class UserController extends Controller
 
 // UPDATE
 
-    public function updateProfile($id){
-        //
+    public function updateProfile(Request $request,User $profile){
+        $request->validate([
+            'nombre' => 'required',
+            'apellidos' => 'required',
+            'telefono' => 'required',
+            'direccion' => 'required',
+        ]);
+        $profile -> update($request->all());
+        return redirect()->route('index');
     }
 
 

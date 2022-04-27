@@ -17,13 +17,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/login', [Controller::class, 'login'])->middleware("guest");
-Route::post('/logeado', [Controller::class, 'logeado']);
-Route::get('/register', [Controller::class, 'register'])->middleware("guest");
-Route::post('/registrado', [Controller::class, 'registrado']);
-//Route::get("/welcome", [Controller::class, 'welcome'])/*->middleware('auth')*/;
-Route::get("/logout",[Controller::class, 'logout']);
-route::get("/search",[Controller::class, 'search']);
+Route::controller(Controller::class)->group(function(){
+    Route::get('/login', 'login')->name('login')->middleware("guest");
+    Route::post('/logeado', 'logeado')->name('logeado');
+    Route::get('/register', 'register')->name('register')->middleware("guest");
+    Route::post('/registrado', 'registrado')->name('registrado');
+    //Route::get("/welcome", [Controller::class, 'welcome'])/*->middleware('auth')*/;
+    Route::get("/logout", 'logout')->name('logout');
+    route::get("/search", 'search')->name('search');
+});
 
 Route::controller(ProductController::class)->group(function(){
     Route::get('/','index')->name('index');
@@ -44,7 +46,7 @@ Route::controller(UserController::class)->group(function(){
     Route::get('/profile/edit/{id}','editProfile')->name('profile.edit');
     
     Route::post('/profile/edit', 'saveProfile')->name('profile.save');
-    Route::put('/updateProfile/{id}','updateProfile')->name('profile.update');
+    Route::put('/updateProfile/{profile}','updateProfile')->name('profile.update');
     Route::delete('/deleteProfile/{id}','deleteProfile')->name('profile.destroy');
 });
 
