@@ -32,7 +32,7 @@ Route::controller(ProductController::class)->group(function(){
     Route::get('/product/create', 'createProduct')->name('product.create');
     Route::get('/product/detail/{producto}', 'detailProduct')->name('product.detail');
     Route::get('/product/edit/{id}', 'editProduct')->name('product.edit');
-    Route::get('/product/publish', 'publishProduct')->name('product.publish');
+    Route::get('/product/publish/{id}', 'publishProduct')->name('product.publish');
     Route::get('/terminos', 'terminos')->name('index.terminos');
 
     Route::post('/create', 'saveProduct')->name('product.save');

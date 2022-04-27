@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Categories;
 use App\Models\Productos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 //use Illuminate\Http\Request;
 //use Illuminate\Support\Facades\DB;
@@ -12,10 +13,10 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
 
-/*    public function __construct()
+    public function __construct()
     {
-        
-    }*/
+        $this->middleware('auth')->except('index');
+    }
 //*GET
 
     public function index(){
@@ -41,8 +42,9 @@ class ProductController extends Controller
         return view("product.editProduct", compact('producto','categories'));
     }
 
-    public function publishProduct(){
-        return view('product.publishProduct');
+    public function publishProduct($id){
+        $productos = Productos::where('iduser',$id)->get();
+        return view('product.publishProduct',compact('productos'));
     }
 
     public function terminos(){
@@ -84,14 +86,15 @@ class ProductController extends Controller
             'idcategoria' => 'required',
         ]);
         $producto -> update($request->all());
-        return redirect()->route('index');
+        return redirect()->route('product.publish',Auth::user()->id);
     }
 
 
 //! DELETE
 
     public function deleteProduct($id){
-        //
+        $product = Productos::destroy($id);
+        return redirect()->route('product.publish',Auth::user()->id);
     }
 
 }
