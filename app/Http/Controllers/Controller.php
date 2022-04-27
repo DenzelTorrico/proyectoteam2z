@@ -32,13 +32,12 @@ class Controller extends BaseController
     public function logeado(Request $request){
        /* $nombre = $request->usuario;
         $contra = $request->password;*/
-        $credentials = $request->only('email', 'password');
-       $request->validate([
-           "email"=>"required|email",
-           "passsword"=>"required|password"
-       ]);
- 
-       
+        $request->validate([
+            "correo"=>"required|email",
+            "password"=>"required",
+        ]);
+        
+        $credentials = $request->only('correo', 'password');
 
         if (Auth::attempt($credentials)) {
             // Authentication passed...
@@ -55,7 +54,7 @@ class Controller extends BaseController
         }else{
             return redirect()->action([Controller::class, 'login']);
         }
-        
+
     }
 
     public function logout(Request $request){
@@ -76,31 +75,30 @@ class Controller extends BaseController
 
        // $ingresado = $request->all();
        // $guardar=User::create([$request->all()]);
-       $request->validate([
-        "name"=>"required",
-      "email"=>"required|email",
-     "passsword"=>"required",
-      'confirmcontra'=>'required|same:password',
-      "usuario"=>"required",
-      "apellidos"=>"required",
-      "telefono"=>"required|numeric",
-      "direccion"=>"required"
 
-    ]);
-       $guardar = new User;
-       $guardar->name = $request->name;
-       $guardar->email = $request->email;
-       $guardar->usuario = $request->usuario;
-       $guardar->password = bcrypt($request->password);
-       $guardar->apellidos = $request->apellidos;
-       $guardar->telefono = $request->telefono;
-       $guardar->direccion = $request->direccion;
-       $guardar->id_role = $request->id_role;
-     
-       $guardar->save();
+        $request->validate([
+            "nombre"=>"required",
+            "apellidos"=>"required",
+            "usuario"=>"required",
+            "telefono"=>"required",
+            "correo"=>"required|email",
+            "password"=>"required",
+            'confirmcontra'=>'required|same:password',
+            "direccion"=>"required"
+        ]);
+        
+        $guardar = new User();
+        $guardar->nombre = $request->nombre;
+        $guardar->apellidos = $request->apellidos;
+        $guardar->telefono = $request->telefono;
+        $guardar->correo = $request->correo;
+        $guardar->usuario = $request->usuario;
+        $guardar->password = bcrypt($request->password);
+        $guardar->direccion = $request->direccion;
+        $guardar->id_role = $request->id_role;
 
-       return redirect()->action([ProductController::class, 'index']);
-        //return $guardar;
+        $guardar->save();
 
+        return redirect()->action([ProductController::class, 'index']);
     }
 }
