@@ -20,7 +20,7 @@
         </div>
 
         <div class="space-y-2">
-            <form action="/search" method="get">
+            <form action="{{ route('search') }}" method="get">
             <div class="flex w-96">
                 <input
                   class="bg-white text-gray-600 text-sm rounded-l-md border-r-2 outline-none border-gray-500 block w-full p-2.5"
@@ -47,12 +47,12 @@
         <div>
             <div class="flex space-x-4">
                 @guest
-                <a href="/login">Login</a>
-                <a href="/register">Register</a>
+                <a href="{{ route('login') }}">Login</a>
+                <a href="{{ route('register') }}">Register</a>
                 @else
-                <a href="/">Bienvenido: {{Auth::user()->usuario}}</a>
-                <a href="logout">Cerrar sesion</a>
-                
+                <a href="{{ route('profile.edit',Auth::user()->id) }}">Bienvenido: {{Auth::user()->usuario}}</a>
+                <a href="{{ route('logout') }}">Cerrar sesion</a>
+                <a href="">Mis publicaciones</a>
                 @endguest
                 <a href="#">Mis pedidos</a>
                

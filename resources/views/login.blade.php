@@ -1,7 +1,7 @@
 @extends("layouts.master")
 <script src="https://cdn.tailwindcss.com"></script>
 @section('slot')
-<form action="logeado" class="flex flex-col  items-center mt-10 pb-3" method="post">
+<form action="{{ route('logeado') }}" class="flex flex-col  items-center mt-10 pb-3" method="post">
      @csrf
      <input type="hidden" name="_method" value="POST" />
     <div>
@@ -10,8 +10,8 @@
 
    <div class="flex flex-col w-1/4 mt-5">
     <label class="text-gray-700 text-sm font-bold mb-2" for="">Correo</label>
-    <input class="shadow border rounded focus:outline-none  py-2 px-3" type="text" name="email" id="" placeholder="email">
-     @error("email")
+    <input class="shadow border rounded focus:outline-none  py-2 px-3" type="text" name="correo" id="" placeholder="email">
+     @error("correo")
      <div class="text-red-500">{{ $message }}</div>
      @enderror
 </div>
