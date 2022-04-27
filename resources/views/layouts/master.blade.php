@@ -52,7 +52,7 @@
                 @else
                 <a href="{{ route('profile.edit',Auth::user()->id) }}">Bienvenido: {{Auth::user()->usuario}}</a>
                 <a href="{{ route('logout') }}">Cerrar sesion</a>
-                <a href="">Mis publicaciones</a>
+                <a href="{{ route('product.publish',Auth::user()->id) }}">Mis publicaciones</a>
                 @endguest
                 <a href="#">Mis pedidos</a>
                
