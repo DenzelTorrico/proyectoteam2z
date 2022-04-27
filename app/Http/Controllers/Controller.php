@@ -35,7 +35,7 @@ class Controller extends BaseController
         $credentials = $request->only('email', 'password');
        $request->validate([
            "email"=>"required|email",
-           "passsword"=>"required|password"
+           "password"=>"required|password"
        ]);
  
        
@@ -79,7 +79,7 @@ class Controller extends BaseController
        $request->validate([
         "name"=>"required",
       "email"=>"required|email",
-     "passsword"=>"required",
+     "password"=>"required",
       'confirmcontra'=>'required|same:password',
       "usuario"=>"required",
       "apellidos"=>"required",
@@ -88,8 +88,8 @@ class Controller extends BaseController
 
     ]);
        $guardar = new User;
-       $guardar->name = $request->name;
-       $guardar->email = $request->email;
+       $guardar->nombre = $request->nombre;
+       $guardar->correo = $request->correo;
        $guardar->usuario = $request->usuario;
        $guardar->password = bcrypt($request->password);
        $guardar->apellidos = $request->apellidos;

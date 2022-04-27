@@ -8,7 +8,7 @@
    
     <div class="flex flex-col mt-7">
         <label class="text-gray-700 text-sm font-bold mb-2" for="">Nombre</label>
-        <input class="w-3/4 shadow border rounded focus:outline-none  py-2 px-3" type="text" name="name" id="" placeholder="Nombre">
+        <input class="w-3/4 shadow border rounded focus:outline-none  py-2 px-3" type="text" name="nombre" id="" placeholder="Nombre">
         @error("name")
      <div class="text-red-500">{{ $message }}</div>
      @enderror
@@ -16,7 +16,7 @@
 
     <div class="flex flex-col mt-7">
         <label class="text-gray-700 text-sm font-bold mb-2" for="">Correo</label>
-        <input class="w-3/4 shadow border rounded focus:outline-none  py-2 px-3" type="text" name="email" id="" placeholder="correo">
+        <input class="w-3/4 shadow border rounded focus:outline-none  py-2 px-3" type="text" name="correo" id="" placeholder="correo">
         @error("email")
      <div class="text-red-500">{{ $message }}</div>
      @enderror
