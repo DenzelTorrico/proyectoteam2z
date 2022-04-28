@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use League\CommonMark\Reference\Reference;
 
 class CreateVentaTable extends Migration
 {
@@ -15,16 +16,19 @@ class CreateVentaTable extends Migration
     {
         Schema::create('venta', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('idDetalle');
-            $table->foreign('idDetalle')->references('id')->on('detalleventa');
             $table->unsignedBigInteger('idUsuario');
             $table->foreign('idUsuario')->references('id')->on('users');
-            $table->double('total');
-            $table->date('fechaPago');
-            $table->date('fechaEnvio');
+            $table->unsignedBigInteger('idProducto');
+            $table->foreign('idProducto')->references('id')->on('productos');
+            $table->double('precioUnitario');
+            $table->integer('cantidad');
+            $table->double('igv')->default(0.18);
+            $table->double('costoEnvio');
             $table->boolean('estadoVenta');
             $table->unsignedBigInteger('idMetodoPago');
             $table->foreign('idMetodoPago')->references('id')->on('metodopago');
+            $table->date('fechaPago');
+            $table->date('fechaEnvio');
             $table->timestamps();
         });
     }

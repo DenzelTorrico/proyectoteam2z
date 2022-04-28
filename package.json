@@ -8,10 +8,12 @@
         "hot": "mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production",
-        "commit": "cz"
+        "commit": "cz",
+        "prettier": "prettier ./node_modules/.bin/prettier --write resources/**/*.blade.php -c"
     },
     "devDependencies": {
         "@popperjs/core": "^2.10.2",
+        "@shufo/prettier-plugin-blade": "^1.3.2",
         "autoprefixer": "^10.4.4",
         "axios": "^0.21",
         "bootstrap": "^5.1.3",
@@ -20,6 +22,8 @@
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.4.12",
+        "prettier": "^2.6.2",
+        "resolve-url-loader": "^5.0.0",
         "sass": "^1.32.11",
         "sass-loader": "^11.0.1"
     },
