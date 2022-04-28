@@ -6,5 +6,6 @@
         "esbenp.prettier-vscode",
         "bradlc.vscode-tailwindcss",
         "vscode-icons-team.vscode-icons",
+        "aaron-bond.better-comments",
     ]
 }
