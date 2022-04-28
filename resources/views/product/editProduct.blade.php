@@ -68,7 +68,8 @@
                                 </option>
                                 <option {{ $producto->estadoProducto == 'usado' ? 'selected' : '' }} value="usado">Usado
                                 </option>
-                                <option {{ $producto->estadoProducto == 'malogrado' ? 'selected' : '' }} value="malogrado">
+                                <option {{ $producto->estadoProducto == 'malogrado' ? 'selected' : '' }}
+                                    value="malogrado">
                                     Malogrado</option>
                                 <option {{ $producto->estadoProducto == 'reparado' ? 'selected' : '' }} value="reparado">
                                     Reparado</option>
