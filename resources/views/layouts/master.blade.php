@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +37,7 @@
               </form>
               <div>
                   <div class="flex space-x-4">
-                      <a href="#">Historial</a>
+											<a href="#">Historial</a>
                       <a href="#">Vender</a>
                       <a href="#">Categorias</a>
                   </div>
