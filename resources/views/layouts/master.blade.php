@@ -50,7 +50,8 @@
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
                     @else
-                        <a href="{{ route('profile.edit', Auth::user()->id) }}">Bienvenido: {{ Auth::user()->usuario }}</a>
+                        <a href="{{ route('profile.edit', Auth::user()->id) }}">Bienvenido:
+                            {{ Auth::user()->usuario }}</a>
                         <a href="{{ route('logout') }}">Cerrar sesion</a>
                         <a href="{{ route('product.publish', Auth::user()->id) }}">Mis publicaciones</a>
                     @endguest
