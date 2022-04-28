@@ -11,9 +11,9 @@
     
      <p>Productos menores a: </p>
     
-    <form action="{{route('searchprice')}}">
+    <form action="{{route('searchpricecategory')}}">
     <input type="range" value="100" name="ranges" min="100" max="8000" step="100" onchange="document.getElementById('range').innerHTML=this.value" id="">
-    <input type="hidden" name="buscador" value={{$buscador}}>
+    <input type="hidden" name="id" value={{$buscador}}>
    <p>S/<span id="range">100</span></p>
  
   <button type="submit" class="bg-blue-600 text-white rounded-lg p-2">></button>
