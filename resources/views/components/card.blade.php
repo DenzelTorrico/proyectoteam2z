@@ -1,7 +1,7 @@
 <div class="shadow-lg rounded-lg bg-white p-2 cursor-pointer hover:shadow-2xl">
-        <img src="{{$foto}}" class="w-full bg-cover" alt="Polo">
+        <img src="{{$foto}}" class="w-full h-80" alt="{{ $title }}">
         <hr>
-        <h4 class="text-xl font-bold">{{ $title }}</h4>
+        <h4 class="text-md md:text-xl font-bold">{{ $title }}</h4>
         <span class="text-green-500 text-xs font-bold">Envio gratis</span>
         <div class="flex justify-between">
             <span class="text-blue-600 text-lg font-bold">S/.{{ $price }}</span>
