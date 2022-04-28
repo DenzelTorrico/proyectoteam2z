@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categories;
 use App\Models\Productos;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,9 +18,9 @@ class ProductController extends Controller
     {
         $this->middleware('auth')->except(['index','detailProduct']);
     }
-//*GET
 
-    public function index(){
+    //*GET
+    public function index(Request $request){
         $ofertas = Productos::inRandomOrder()->take(6)->get();
         $categories = Categories::all();
         $productos = Productos::inRandomOrder()->take(8)->get();
@@ -31,8 +32,8 @@ class ProductController extends Controller
         return view("product.createProduct",compact('categories'));
     }
 
-    public function detailProduct($producto){
-        $product = Productos::select('productos.nombre as nombre','productos.precio as precio','productos.descuento as descuento','productos.estadoproducto as estado','productos.stock as stock','productos.foto as foto','categories.nombre as categoria')->join('categories','productos.idcategoria','=','categories.id')->where('productos.id',$producto)->get();
+    public function detailProduct(Request $request ,$producto){
+        $product = Productos::select('productos.id','productos.nombre as nombre','productos.precio as precio','productos.descuento as descuento','productos.estadoproducto as estado','productos.stock as stock','productos.foto as foto','categories.nombre as categoria')->join('categories','productos.idcategoria','=','categories.id')->where('productos.id',$producto)->get();
         //$product = Productos::findOrFail($producto);
         //$idCategoria = Categories::findOrFail($producto);
         return view("product.detailProduct", compact('product'));
@@ -53,6 +54,12 @@ class ProductController extends Controller
         }
        
     }
+
+    public function checkout($id){
+        $productos = Productos::findOrFail($id);
+        return view('product.checkout',compact('id','productos'));
+    }
+
 
     public function terminos(){
         return view('terminos');
