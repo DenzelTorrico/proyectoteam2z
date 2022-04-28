@@ -44,7 +44,12 @@ class ProductController extends Controller
 
     public function publishProduct($id){
         $productos = Productos::where('iduser',$id)->get();
-        return view('product.publishProduct',compact('productos'));
+        if(Auth::user()->id==$id){
+            return view('product.publishProduct',compact('productos'));
+        }else{
+            return redirect()->route('product.publish',Auth::user()->id);
+        }
+       
     }
 
     public function terminos(){
