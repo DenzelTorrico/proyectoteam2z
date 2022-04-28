@@ -1,5 +1,6 @@
 @extends("layouts.master")
 @section('slot')
+    
 <div class="px-8 py-10">
     @foreach ($productos as $producto)
     <div class="flex w-full space-x-4 p-4">
