@@ -80,12 +80,18 @@
     <script>
         document.addEventListener('DOMContentLoaded',()=>{
             try{
-                new Splide( '#splide1').mount();
+                new Splide('#splide1',{
+                    type    : 'loop',
+                    autoplay: true,
+                    speed: 1000,
+                    interval: 5000,
+                    arrows: false,
+                }).mount();
             }catch{
 
             }
             try {
-                new Splide( '#splide2',{
+                new Splide('#splide2',{
                     type   : 'loop',
                     perPage: 3,
                 } ).mount();
@@ -93,7 +99,7 @@
                 
             }
             try {
-                new Splide( '#splide3',{
+                new Splide('#splide3',{
                     type   : 'loop',
                     perPage: 3,
                 } ).mount();

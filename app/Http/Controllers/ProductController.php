@@ -15,13 +15,15 @@ class ProductController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except('index');
+        $this->middleware('auth')->except(['index','detailProduct']);
     }
 //*GET
 
     public function index(){
-        $productos = Productos::all();
-        return view("index", compact('productos'));
+        $ofertas = Productos::inRandomOrder()->take(6)->get();
+        $categories = Categories::all();
+        $productos = Productos::inRandomOrder()->take(8)->get();
+        return view("index", compact(['ofertas','productos','categories']));
     }
 
     public function createProduct(){
