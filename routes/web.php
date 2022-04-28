@@ -25,6 +25,10 @@ Route::controller(Controller::class)->group(function(){
     //Route::get("/welcome", [Controller::class, 'welcome'])/*->middleware('auth')*/;
     Route::get("/logout", 'logout')->name('logout');
     route::get("/search", 'search')->name('search');
+    route::get("searchcategory","searchcategory")->name('searchcategory');
+    route::get("searchpricecategory","searchpricecategory")->name('searchpricecategory');
+    route::get("searchprice","searchprice")->name('searchprice');
+    
 });
 
 Route::controller(ProductController::class)->group(function(){
