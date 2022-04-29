@@ -39,7 +39,10 @@ Route::controller(ProductController::class)->group(function(){
     Route::get('/product/publish/{id}', 'publishProduct')->name('product.publish');
     Route::get('/terminos', 'terminos')->name('index.terminos');
     Route::get('/checkout/{id}', 'checkout')->name('product.checkout');
-    
+
+    Route::get('/paypal', 'paypal')->name('product.paypal');
+    Route::get('/paypal/process/{orderId}','process')->name('paypal.process');
+
 
     Route::post('/create', 'saveProduct')->name('product.save');
     Route::delete('/deleteProduct/{id}', 'deleteProduct')->name('product.destroy');
@@ -55,6 +58,8 @@ Route::controller(UserController::class)->group(function(){
     Route::put('/updateProfile/{profile}','updateProfile')->name('profile.update');
     Route::delete('/deleteProfile/{id}','deleteProfile')->name('profile.destroy');
 });
+
+// Paypal SDK JS (Card)
 
 
 /*Auth::routes();
