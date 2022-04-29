@@ -31,9 +31,20 @@
                     <div>
                         <span class="text-green-500">Descuento: </span> <span> S/.{{ $prod->descuento }}</span>
                     </div>
-                    <div>
-                        <a href="{{ route('product.checkout', ['id' => $prod->id]) }}">AAA</a>
-                    </div>
+                    <form action="{{ route('product.checkout', $prod->id) }}" method="get">
+                        <span class="text-gray-500">Stock disponible: {{ $prod->stock }}</span>
+                        @csrf
+                        <div class="flex space-x-2">
+                            <label>Cantidad</label>
+                            <input name="cantidad" type="text"
+                                class="border-gray-600/50 p-1 rounded-md outline-none border-[1px] w-full" aria-label="cantidad"
+                                value="{{ old('cantidad') }}" onkeyup="">
+                        </div>
+                        <input class="px-3 py-2 rounded-lg bg-green-500 text-white hover:bg-green-700 cursor-pointer" type="submit" value="Comprar">
+                    </form>
+                    {{-- <div>
+                        <a href="{{ route('product.checkout', $prod->id) }}">Comprar</a>
+                    </div> --}}
                 </div>
             </section>
         @endforeach

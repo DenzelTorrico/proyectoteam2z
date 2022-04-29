@@ -55,9 +55,9 @@ class ProductController extends Controller
        
     }
 
-    public function checkout($id){
-        $productos = Productos::findOrFail($id);
-        return view('product.checkout',compact('id','productos'));
+    public function checkout(Request $request, $id){
+        $producto = Productos::findOrFail($id);
+        return view('product.checkout',compact('id','producto','request'));
     }
 
     public function paypal(){

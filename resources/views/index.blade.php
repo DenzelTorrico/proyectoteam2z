@@ -31,7 +31,7 @@
                                     @endslot
                                     @slot('price')
                                         {{ $oferta->precio }}
-                                        <a href="{{ route('product.edit', $oferta->id) }}">Editar</a>
+                                        {{-- <a href="{{ route('product.edit', $oferta->id) }}">Editar</a> --}}
                                     @endslot
                                 @endcomponent
                             </a>

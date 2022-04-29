@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -24,11 +25,13 @@ Route::controller(Controller::class)->group(function(){
     Route::post('/registrado', 'registrado')->name('registrado');
     //Route::get("/welcome", [Controller::class, 'welcome'])/*->middleware('auth')*/;
     Route::get("/logout", 'logout')->name('logout');
+});
+
+Route::controller(SearchController::class)->group(function(){
     route::get("/search", 'search')->name('search');
     route::get("searchcategory","searchcategory")->name('searchcategory');
     route::get("searchpricecategory","searchpricecategory")->name('searchpricecategory');
     route::get("searchprice","searchprice")->name('searchprice');
-    
 });
 
 Route::controller(ProductController::class)->group(function(){
@@ -50,8 +53,6 @@ Route::controller(ProductController::class)->group(function(){
 });
 
 Route::controller(UserController::class)->group(function(){
-    /*Route::get('/login', 'login')->name('index.login');
-    Route::get('/register','register')->name('index.register');*/
     Route::get('/profile/edit/{id}','editProfile')->name('profile.edit');
     
     Route::post('/profile/edit', 'saveProfile')->name('profile.save');
@@ -60,10 +61,3 @@ Route::controller(UserController::class)->group(function(){
 });
 
 // Paypal SDK JS (Card)
-
-
-/*Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-*/
