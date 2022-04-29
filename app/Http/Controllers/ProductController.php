@@ -60,11 +60,17 @@ class ProductController extends Controller
         return view('product.checkout',compact('id','productos'));
     }
 
+    public function paypal(){
+        return view('paypal');
+    }
+
+    public function process($orderId){
+
+    }
 
     public function terminos(){
         return view('terminos');
     }
-
 
 //? POST
 
