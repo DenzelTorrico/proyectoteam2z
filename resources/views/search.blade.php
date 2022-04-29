@@ -35,5 +35,8 @@
                             <p class="font-bold text-xl mt-2">S/ {{ $item->precio }}</p>
                         </div>
                     </div>
+                @endforeach
+            </div>
+        </div>
     </section>
 @endsection
