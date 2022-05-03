@@ -44,7 +44,7 @@ Route::controller(ProductController::class)->group(function(){
     Route::get('/checkout/{id}', 'checkout')->name('product.checkout');
 
     Route::get('/paypal', 'paypal')->name('product.paypal');
-    Route::get('/paypal/process/{orderId}','process')->name('paypal.process');
+    Route::get('/paypal/process', 'process')->name('paypal.process');
 
 
     Route::post('/create', 'saveProduct')->name('product.save');
