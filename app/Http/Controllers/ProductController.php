@@ -64,7 +64,7 @@ class ProductController extends Controller
         return view('paypal');
     }
 
-    public function process($orderId){
+    public function process(){
 
     }
 

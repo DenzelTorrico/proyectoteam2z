@@ -62,7 +62,8 @@
                 </div>
             </div>
             <div class="text-right py-5">
-                <input type="submit" class="px-3 py-2 rounded-lg bg-green-500 text-white hover:bg-green-700 cursor-pointer" value="Continuar">
+                <a class="px-3 py-2 rounded-lg bg-green-500 text-white hover:bg-green-700 cursor-pointer" href="{{route('product.paypal')}}">Continuar</a>
+                {{-- <input type="submit"  value="Continuar"> --}}
             </div>
         </section>
         <div class="h-screen flex justify-center px-4 w-5/12">

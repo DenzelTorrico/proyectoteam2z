@@ -6,6 +6,10 @@
     <div id="paypal-button-container"></div>
 
     <script>
+        function comprar() {
+            window.location.href = "{{ route('paypal.process') }}";
+        }
+
         paypal.Buttons({
             createOrder: function(data, actions) {
                 return actions.order.create({
@@ -23,7 +27,10 @@
             onApprove: function(data, actions) {
                 console.log('data', data);
                 console.log('actions', actions);
-                alert("TRANSACCIÓN EXITOSA");
+                let resp = confirm("TRANSACCIÓN EXITOSA");
+                if (resp){
+                    comprar();
+                }
             },
             onError: function(err) {
                 console.log("ERROR CRÍTICO: ", err);
