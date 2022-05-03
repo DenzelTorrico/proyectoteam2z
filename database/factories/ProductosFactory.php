@@ -16,8 +16,8 @@ class ProductosFactory extends Factory
         return [
             'nombre' => $this->faker->name(),
             'descripcion' => $this->faker->paragraph(2),
-            'precio' => $this->faker->randomFloat(2,1,10000),
-            'descuento' => $this->faker->randomFloat(2,1,9999),
+            'precio' => $this->faker->randomFloat(2,200,1000),
+            'descuento' => $this->faker->randomFloat(2,50,200),
             'estadoProducto' => $this->faker->randomElement(['Nuevo','Usado','Malogrado','Reparado']),
             'stock' => $this->faker->numberBetween(0,150),
             'foto' => $this->faker->imageUrl(),

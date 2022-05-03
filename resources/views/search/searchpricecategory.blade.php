@@ -10,7 +10,7 @@
                             href="{{ route('searchcategory', ['categoria' => $category->id]) }}">{{ $category->nombre }}</a>
                     </p>
                 @endforeach
-
+                <hr>
                 <p>Productos menores a: </p>
 
                 <form action="{{ route('searchpricecategory') }}">
@@ -19,7 +19,9 @@
                     <input type="hidden" name="id" value={{ $buscador }}>
                     <p>S/<span id="range">100</span></p>
 
-                    <button type="submit" class="bg-blue-600 text-white rounded-lg p-2">></button>
+                    <button type="submit" class="bg-blue-600 text-white rounded-lg p-2">
+                        <i class="bi bi-search"></i>
+                    </button>
                 </form>
             </div>
             <div class="col-span-3">
