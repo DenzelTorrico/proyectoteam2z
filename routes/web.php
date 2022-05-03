@@ -60,5 +60,4 @@ Route::controller(UserController::class)->group(function(){
     Route::put('/updateProfile/{profile}','updateProfile')->name('profile.update');
     Route::delete('/deleteProfile/{id}','deleteProfile')->name('profile.destroy');
 });
-
 // Paypal SDK JS (Card)

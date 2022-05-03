@@ -62,7 +62,7 @@
             <div class="grid grid-cols-3 items-center text-lg">
                 <div class="col-span-2">
                     <a class="mr-5" href="">Nosotros</a>
-                    <a class="mr-5" href="">Terminos y condiciones de privacidad</a>
+                    <a class="mr-5" href="{{ route('index.terminos') }}">Terminos y condiciones de privacidad</a>
                 </div>
 
                 <div class="flex items-center">

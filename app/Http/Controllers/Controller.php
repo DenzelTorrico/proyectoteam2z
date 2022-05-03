@@ -65,7 +65,7 @@ class Controller extends BaseController
         //$role = Rols::all();
         return view("register");
     }
-    
+
     public function registrado(Request $request){
 
        // $ingresado = $request->all();
