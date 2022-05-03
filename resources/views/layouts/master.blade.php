@@ -38,7 +38,6 @@
                 </form>
                 <div>
                     <div class="flex space-x-4">
-                        <a href="#">Historial</a>
                         <a href="#">Vender</a>
                         <a href="#">Categorias</a>
                     </div>
@@ -54,8 +53,8 @@
                             {{ Auth::user()->usuario }}</a>
                         <a href="{{ route('logout') }}">Cerrar sesion</a>
                         <a href="{{ route('product.publish', Auth::user()->id) }}">Mis publicaciones</a>
+                        <a href="{{ route('profile.historial') }}">Historial</a>
                     @endguest
-                    <a href="#">Mis pedidos</a>
 
                 </div>
             </div>

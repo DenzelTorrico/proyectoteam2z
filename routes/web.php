@@ -54,6 +54,7 @@ Route::controller(ProductController::class)->group(function(){
 
 Route::controller(UserController::class)->group(function(){
     Route::get('/profile/edit/{id}','editProfile')->name('profile.edit');
+    Route::get('/profile/historial','historial')->name('profile.historial');
     
     Route::post('/profile/edit', 'saveProfile')->name('profile.save');
     Route::put('/updateProfile/{profile}','updateProfile')->name('profile.update');
