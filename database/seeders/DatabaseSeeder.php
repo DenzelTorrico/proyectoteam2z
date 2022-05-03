@@ -85,6 +85,12 @@ class DatabaseSeeder extends Seeder
             'fechaPago'=>"2022-05-03",
             'fechaEnvio'=>"2022-05-06",
         ]);
+        DB::table('historial')->insert([
+            'idVenta' => "1",
+        ]);
+        DB::table('historial')->insert([
+            'idVenta' => "2",
+        ]);
        /* DB::table('rol')->insert([
             'nombre'=>"usuario",
             'created_at'=>date('y-m-d h:m:s')
