@@ -29,9 +29,9 @@ Route::controller(Controller::class)->group(function(){
 
 Route::controller(SearchController::class)->group(function(){
     route::get("/search", 'search')->name('search');
-    route::get("searchcategory","searchcategory")->name('searchcategory');
-    route::get("searchpricecategory","searchpricecategory")->name('searchpricecategory');
-    route::get("searchprice","searchprice")->name('searchprice');
+    route::get("searchcategory",'searchcategory')->name('searchcategory');
+    route::get("searchpricecategory",'searchpricecategory')->name('searchpricecategory');
+    route::get("searchprice",'searchprice')->name('searchprice');
 });
 
 Route::controller(ProductController::class)->group(function(){
@@ -60,5 +60,4 @@ Route::controller(UserController::class)->group(function(){
     Route::put('/updateProfile/{profile}','updateProfile')->name('profile.update');
     Route::delete('/deleteProfile/{id}','deleteProfile')->name('profile.destroy');
 });
-
 // Paypal SDK JS (Card)

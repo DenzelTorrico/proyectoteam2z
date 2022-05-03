@@ -1,5 +1,4 @@
 @extends("layouts.master")
-<script src="https://cdn.tailwindcss.com"></script>
 @section('slot')
     <div class="container  mx-auto w-3/4 p-5">
         <h2 class="font-bold text-lg">Terminos y condiciones</h2>
