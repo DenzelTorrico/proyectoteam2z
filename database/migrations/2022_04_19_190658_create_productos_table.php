@@ -18,7 +18,7 @@ class CreateProductosTable extends Migration
             $table->string('nombre');
             $table->string('descripcion');
             $table->double('precio');
-            $table->double('descuento');
+            $table->integer('descuento');
             $table->string('estadoProducto');
             $table->integer('stock');
             $table->string('foto');

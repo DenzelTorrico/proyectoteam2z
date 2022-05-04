@@ -9,10 +9,25 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.1/dist/js/splide.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.1/dist/css/splide.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <title>Document</title>
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    
+    <title>Mercado Z</title>
+    <style>
+        *{
+            font-family: 'Roboto', sans-serif;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+    </style>
 </head>
 
-<body>
+<body >
     <header class="bg-[#0078D4] text-white">
         <nav class="flex flex-wrap justify-between items-center px-5 py-2">
             <div class="flex space-x-4 items-center">
@@ -34,7 +49,6 @@
                 </form>
                 <div>
                     <div class="flex space-x-4">
-                        <a href="#">Vender</a>
                         <a href="#">Categorias</a>
                     </div>
                 </div>
@@ -45,8 +59,10 @@
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
                     @else
-                        <a href="{{ route('profile.edit', Auth::user()->id) }}">Bienvenido:
-                            {{ Auth::user()->usuario }}</a>
+                        <a href="{{ route('profile.edit', Auth::user()->id) }}">
+                            <i class="bi bi-person-circle"></i>
+                            {{ Auth::user()->usuario }}
+                        </a>
                         <a href="{{ route('logout') }}">Cerrar sesion</a>
                         <a href="{{ route('product.publish', Auth::user()->id) }}">Mis publicaciones</a>
                         <a href="{{ route('profile.historial') }}">Historial</a>
@@ -56,8 +72,9 @@
             </div>
         </nav>
     </header>
-    @yield('slot')
-    <div class="flex flex-col">
+    <div>
+        @yield('slot')
+    </div>
         <footer class="bg-blue-500 text-white mt-auto p-10 ">
             <div class="grid grid-cols-3 items-center text-lg">
                 <div class="col-span-2">
@@ -72,39 +89,7 @@
 
             </div>
         </footer>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            try {
-                new Splide('#splide1', {
-                    type: 'loop',
-                    autoplay: true,
-                    speed: 1000,
-                    interval: 5000,
-                    arrows: false,
-                }).mount();
-            } catch {
-
-            }
-            try {
-                new Splide('#splide2', {
-                    type: 'loop',
-                    perPage: 3,
-                }).mount();
-            } catch (error) {
-
-            }
-            try {
-                new Splide('#splide3', {
-                    type: 'loop',
-                    perPage: 3,
-                }).mount();
-            } catch (error) {
-
-            }
-
-        })
-    </script>
+        @yield('scripts')
 </body>
 
 </html>

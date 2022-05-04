@@ -78,3 +78,22 @@
         </section>
     </section>
 @endsection
+
+@section('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            new Splide('#splide1', {
+                type: 'loop',
+                autoplay: true,
+                speed: 1000,
+                interval: 5000,
+                arrows: false,
+            }).mount();
+
+            new Splide('#splide2', {
+                type: 'loop',
+                perPage: 3,
+            }).mount();
+    })
+    </script>
+@endsection

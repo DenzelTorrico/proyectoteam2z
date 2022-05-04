@@ -16,7 +16,7 @@ class ProductController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except(['index','detailProduct']);
+        $this->middleware('auth')->except(['index','detailProduct','terminos']);
     }
 
     //*GET
@@ -33,7 +33,7 @@ class ProductController extends Controller
     }
 
     public function detailProduct(Request $request ,$producto){
-        $product = Productos::select('productos.id','productos.nombre as nombre','productos.precio as precio','productos.descuento as descuento','productos.estadoproducto as estado','productos.stock as stock','productos.foto as foto','categories.nombre as categoria')->join('categories','productos.idcategoria','=','categories.id')->where('productos.id',$producto)->get();
+        $product = Productos::select('productos.id','productos.nombre as nombre','productos.descripcion','productos.precio as precio','productos.descuento as descuento','productos.estadoproducto as estado','productos.stock as stock','productos.foto as foto','categories.nombre as categoria')->join('categories','productos.idcategoria','=','categories.id')->where('productos.id',$producto)->get();
         //$product = Productos::findOrFail($producto);
         //$idCategoria = Categories::findOrFail($producto);
         return view("product.detailProduct", compact('product'));
