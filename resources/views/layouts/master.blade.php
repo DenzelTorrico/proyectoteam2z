@@ -34,8 +34,12 @@
                 </form>
                 <div>
                     <div class="flex space-x-4">
-                        <a href="#">Vender</a>
+                        @guest
+                        <a href="">Categorias</a>
+                        @else
+                        <a href="{{ route('product.create') }}">Vender</a>
                         <a href="#">Categorias</a>
+                        @endguest
                     </div>
                 </div>
             </div>
