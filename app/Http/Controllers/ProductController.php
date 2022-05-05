@@ -82,10 +82,15 @@ class ProductController extends Controller
             'descuento' => '',
             'estadoProducto' => 'required',
             'stock' => 'required',
-            'foto' => 'url',
+            'file'=> 'image|mimes:jpg,png,jpeg|max:2048',
+            'foto' => '',
             'idcategoria' => 'required',
         ]);
+        $image = $request->file->storeOnCloudinary('products');
         $request->merge(['iduser' => ''.Auth::user()->id.'']);
+        $request->merge(['foto' => $image->getPath()]);
+        //$response = cloudinary()->upload($request->file('file')->getRealPath())->getSecurePath();
+
         $producto = Productos::create($request->all());
         return redirect()->route('index');
     }
