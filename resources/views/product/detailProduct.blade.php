@@ -38,7 +38,7 @@
                     </div>
                     <div class="flex items-center">
                         <span class="text-gray-800 text-4xl">S/{{ round($prod->precio - ($prod->precio * $prod->descuento/100),2) }}</span>
-                        <span class="text-green-600 text-xl">{{ $prod->descuento }} %</span>
+                        <span class="text-green-600 text-xl">{{ $prod->descuento }}%</span>
                     </div>
                     <div>
                         <div class="flex text-xl text-green-500">

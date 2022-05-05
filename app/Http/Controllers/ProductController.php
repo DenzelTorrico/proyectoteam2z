@@ -75,7 +75,6 @@ class ProductController extends Controller
 //? POST
 
     public function saveProduct(Request $request){
-
         $request->validate([
             'nombre' => 'required',
             'descripcion' => 'required|min:20',
@@ -86,7 +85,7 @@ class ProductController extends Controller
             'foto' => 'url',
             'idcategoria' => 'required',
         ]);
-
+        $request->merge(['iduser' => ''.Auth::user()->id.'']);
         $producto = Productos::create($request->all());
         return redirect()->route('index');
     }
