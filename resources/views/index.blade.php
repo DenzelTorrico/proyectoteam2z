@@ -66,13 +66,15 @@
             <h4 class="text-4xl">Categorias Populares</h4>
             <div class="grid grid-cols-7">
                 @foreach ($categories as $category)
+                <a href="{{ route('searchcategory', ['categoria' => $category->id]) }}">
                     <div
                         class="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white text-center py-10 px-2">
-                        <i class="bi bi-tv text-8xl"></i>
+                        <i class="{{ $category->icon }} text-8xl"></i>
                         <div>
                             <span class="text-black">{{ $category->nombre }}</span>
                         </div>
                     </div>
+                </a>
                 @endforeach
             </div>
         </section>

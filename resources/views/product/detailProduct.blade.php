@@ -1,6 +1,8 @@
 @extends('layouts.master')
 
 @section('slot')
+<h5 class="mx-20 mt-5 mb-2 text-4xl text-gray-600">Detalles del producto</h5>
+<hr>
     <section class="grid grid-cols-8 m-20 gap-28 px-10 py-16 shadow-xl rounded-xl border-2">
         @foreach ($product as $prod)
             <section class="flex flex-col col-span-5">
@@ -39,6 +41,25 @@
                     <div class="flex items-center">
                         <span class="text-gray-800 text-4xl">S/{{ round($prod->precio - ($prod->precio * $prod->descuento/100),2) }}</span>
                         <span class="text-green-600 text-xl">{{ $prod->descuento }}%</span>
+                    </div>
+                    <div>
+                        <div class="flex text-blue-500">
+                            <h5>
+                                Estado: 
+                            </h5>
+                        </div>
+                        <p class="text-gray-500">
+                            @if ($prod->estado == 'Nuevo')
+                                <i class="bi bi-stars"></i>   
+                            @elseif($prod->estado == 'Usado')
+                                <i class="bi bi-recycle"></i>
+                            @elseif($prod->estado == 'Malogrado')
+                                <i class="bi bi-x-circle-fill"></i>
+                            @elseif($prod->estado == 'Reparado')
+                                <i class="bi bi-wrench"></i>
+                            @endif
+                            {{ $prod->estado }}
+                        </p>
                     </div>
                     <div>
                         <div class="flex text-xl text-green-500">

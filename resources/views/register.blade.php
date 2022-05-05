@@ -1,10 +1,15 @@
 @extends("layouts.master")
 <script src="https://cdn.tailwindcss.com"></script>
 @section('slot')
-    <form class="container mx-auto px-4 grid grid-cols-2 p-5" action="{{ route('registrado') }}" method="post">
+
+    <form class="container mx-auto px-4 grid grid-cols-2 p-5" action="{{ route
+    ('registrado') }}" method="post">
         @csrf
         <input type="hidden" name="_method" value="POST" />
-
+        
+        <div class="col-span-2">
+            <h1 class="text-4xl">Formulario de registro</h1>
+        </div>
         <div class="flex flex-col mt-7">
             <label class="text-gray-700 text-sm font-bold mb-2" for="">Nombre</label>
             <input class="w-3/4 shadow border rounded focus:outline-none  py-2 px-3" type="text" name="nombre" id=""
@@ -83,10 +88,10 @@
                 <option value="1">Usuario</option>
             </select>
         </div>
-
+        
         <div class="flex flex-col mt-7 col-span-2  items-center">
             <input class="block text-sm text-white bg-blue-500 p-2 rounded w-40" type="submit" value="Registrarme">
-            <a class="mt-5 text-blue-500" href="">Ya tengo una cuenta</a>
+            <a class="mt-5 text-blue-500" href="{{ route('login') }}">Ya tengo una cuenta</a>
         </div>
 
 
