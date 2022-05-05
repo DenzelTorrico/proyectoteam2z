@@ -35,10 +35,10 @@
                 <div>
                     <div class="flex space-x-4">
                         @guest
-                        <a href="">Categorias</a>
+                        <a class="p-2 hover:bg-blue-700 hover:rounded-xl hover:transition-all" href="">Categorias</a>
                         @else
-                        <a href="{{ route('product.create') }}">Vender</a>
-                        <a href="#">Categorias</a>
+                        <a class="p-2 hover:bg-blue-700 hover:rounded-xl duration-500"   href="{{ route('product.create') }}">Vender</a>
+                        <a class="p-2 hover:bg-blue-700 hover:rounded-xl duration-500"   href="#">Categorias</a>
                         @endguest
                     </div>
                 </div>
@@ -46,14 +46,14 @@
             <div>
                 <div class="flex space-x-4">
                     @guest
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
+                    <a class="p-2 hover:bg-blue-700 hover:rounded-xl duration-500"  href="{{ route('login') }}">Login</a>
+                    <a class="p-2 hover:bg-blue-700 hover:rounded-xl duration-500"  href="{{ route('register') }}">Register</a>
                     @else
-                        <a href="{{ route('profile.edit', Auth::user()->id) }}">Bienvenido:
+                        <a class="p-2 hover:bg-blue-700 hover:rounded-xl duration-500"  href="{{ route('profile.edit', Auth::user()->id) }}">Bienvenido:
                             {{ Auth::user()->usuario }}</a>
-                        <a href="{{ route('logout') }}">Cerrar sesion</a>
-                        <a href="{{ route('product.publish', Auth::user()->id) }}">Mis publicaciones</a>
-                        <a href="{{ route('profile.historial') }}">Historial</a>
+                            <a class="p-2 hover:bg-blue-700 hover:rounded-xl duration-500"   href="{{ route('logout') }}">Cerrar sesion</a>
+                            <a class="p-2 hover:bg-blue-700 hover:rounded-xl duration-500"  href="{{ route('product.publish', Auth::user()->id) }}">Mis publicaciones</a>
+                        <a class="p-2 hover:bg-blue-700 hover:rounded-xl duration-500"   href="{{ route('profile.historial') }}">Historial</a>
                     @endguest
 
                 </div>
@@ -65,8 +65,8 @@
         <footer class="bg-blue-500 text-white mt-auto p-10 ">
             <div class="grid grid-cols-3 items-center text-lg">
                 <div class="col-span-2">
-                    <a class="mr-5" href="">Nosotros</a>
-                    <a class="mr-5" href="{{ route('index.terminos') }}">Terminos y condiciones de privacidad</a>
+                    <a class="p-2 hover:bg-blue-700 hover:rounded-xl duration-500"   href="">Nosotros</a>
+                    <a  class="p-2 hover:bg-blue-700 hover:rounded-xl duration-500"   href="{{ route('index.terminos') }}">Terminos y condiciones de privacidad</a>
                 </div>
 
                 <div class="flex items-center">
