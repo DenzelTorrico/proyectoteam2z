@@ -24,7 +24,13 @@
         <p class="text-lg">Además, en caso de detectar el uso de más de una cuenta, podremos aplicar retenciones,
             débitos y/o cualquier otra medida si consideramos que ese accionar puede perjudicar al resto de las personas que
             usan el Sitio o a Mercado Libre, más allá de las sanciones que pudieran corresponder. </p>
-
+            <p class="text-lg">
+            Quien quiera usar nuestros servicios, deberá completar el formulario de registro con los datos que le sean
+            requeridos. Al completarlo, se compromete a hacerlo de manera exacta, precisa y verdadera y a mantener sus datos
+            siempre actualizados. La Persona Usuaria será la única responsable de la certeza de sus datos de registro. Sin
+            perjuicio de la información brindada en el formulario, podremos solicitar y/o consultar información adicional
+            para corroborar la identidad de la Persona Usuaria.
+        </p>
 
     </div>
 @endsection

@@ -7,7 +7,7 @@
             <div class="my-10 py-10 text-center rounded-lg border-2 space-y-5">
                 <span class="text-4xl text-gray-400 font-bold">Upss!</span>
                 <p>Parece que aún no ha comprado nada. Intente comprar un producto y el historial se llenara con su información.</p>
-                <img src="https://i.ytimg.com/vi/z8wrRRR7_qU/maxresdefault.jpg" width="50%" class="mx-auto" alt="Not found">
+                {{-- <img src="https://i.ytimg.com/vi/z8wrRRR7_qU/maxresdefault.jpg" width="50%" class="mx-auto" alt="Not found"> --}}
             </div>
         @else
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
