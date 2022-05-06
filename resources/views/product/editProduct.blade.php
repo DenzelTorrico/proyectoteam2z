@@ -9,7 +9,7 @@
                 <img src="{{ $producto->foto }}" class="rounded-md border-blue-500 border-2 w-full" alt="Polo">
             </div>
             <div class="space-y-4 bg-white px-4 w-3/4">
-                <form action="{{ route('product.update', $producto) }}" method="POST">
+                <form action="{{ route('product.update', $producto) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <div>
@@ -89,9 +89,7 @@
                         </div>
                         <div>
                             <label>Foto</label>
-                            <input name="foto" type="text"
-                                class="border-gray-600/50 p-1 rounded-md outline-none border-[1px] w-full" aria-label="foto"
-                                value="{{ old('foto', $producto->foto) }}">
+                            <input type="file" name="file" aria-label="file" accept="image/jpeg,image/png,image/jpg">
                             @error('foto')
                                 <span class="text-red-500 text-sm">{{ $message }}</span><br>
                             @enderror

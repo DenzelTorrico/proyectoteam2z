@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     public function historial(){
-        $historial = Historial::select('historial.id','historial.idVenta','p.nombre','v.precioUnitario','v.cantidad','v.igv','v.costoEnvio','v.estadoVenta','v.fechaPago','v.fechaEnvio')->join('venta as v','historial.idVenta','=','v.id')->join('productos as p','v.idProducto','=','p.id')->where('idUsuario',Auth::user()->id)->get();
+        $historial = Historial::select('historial.id','historial.idVenta','p.nombre','v.precioUnitario','v.cantidad','v.descuento','v.igv','v.costoEnvio','v.estadoVenta','v.fechaPago','v.fechaEnvio')->join('venta as v','historial.idVenta','=','v.id')->join('productos as p','v.idProducto','=','p.id')->where('idUsuario',Auth::user()->id)->get();
         return view('profile.historial',compact('historial'));
     }
 //* GET

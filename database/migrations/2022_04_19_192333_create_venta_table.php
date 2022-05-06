@@ -22,6 +22,7 @@ class CreateVentaTable extends Migration
             $table->foreign('idProducto')->references('id')->on('productos');
             $table->double('precioUnitario');
             $table->integer('cantidad');
+            $table->integer('descuento');
             $table->double('igv')->default(0.18);
             $table->double('costoEnvio');
             $table->boolean('estadoVenta');

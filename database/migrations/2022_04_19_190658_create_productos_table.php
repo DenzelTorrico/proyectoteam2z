@@ -22,6 +22,7 @@ class CreateProductosTable extends Migration
             $table->string('estadoProducto');
             $table->integer('stock');
             $table->string('foto');
+            $table->string('idFoto');
             $table->unsignedBigInteger('idcategoria');
             $table->foreign('idcategoria')->references('id')->on('categories');
             $table->unsignedBigInteger('iduser');

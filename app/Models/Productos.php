@@ -17,6 +17,7 @@ class Productos extends Model
         'estadoProducto',
         'stock',
         'foto',
+        'idFoto',
         'idcategoria',
         'iduser',
     ];

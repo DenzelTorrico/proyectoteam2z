@@ -84,6 +84,7 @@ class DatabaseSeeder extends Seeder
                 'estadoProducto' => "Nuevo",
                 'stock' => 5,
                 'foto' => "https://i.blogs.es/c97ab3/trucos-san-andreas-1/450_1000.jpg",
+                'idFoto' => '1',
                 'idcategoria' => 3,
                 'iduser' => 2,
             ]);
@@ -96,6 +97,7 @@ class DatabaseSeeder extends Seeder
                 'estadoProducto' => "Nuevo",
                 'stock' => 4,
                 'foto' => "https://static1-es.millenium.gg/articles/0/28/12/0/@/129519-gta-vi-article_m-1.jpg",
+                'idFoto' => '1',
                 'idcategoria' => 3,
                 'iduser' => 2,
             ]);
@@ -108,6 +110,7 @@ class DatabaseSeeder extends Seeder
                 'estadoProducto' => "Nuevo",
                 'stock' => 5,
                 'foto' => "https://www.somosxbox.com/wp-content/uploads/2020/03/GTA-5-screensaver-790x491.jpg",
+                'idFoto' => '1',
                 'idcategoria' => 3,
                 'iduser' => 2,
             ]);
@@ -120,6 +123,7 @@ class DatabaseSeeder extends Seeder
                 'estadoProducto' => "Nuevo",
                 'stock' => 5,
                 'foto' => "https://i.blogs.es/0499bf/doometernal4/840_560.jpg",
+                'idFoto' => '1',
                 'idcategoria' => 3,
                 'iduser' => 2,
             ]);
@@ -132,6 +136,7 @@ class DatabaseSeeder extends Seeder
                 'estadoProducto' => "Nuevo",
                 'stock' => 5,
                 'foto' => "https://esports.as.com/2018/09/14/dota-2/Inteligencia-Artificial-Elon-Musk-Dota2_1172592742_199455_1440x810.jpg",
+                'idFoto' => '1',
                 'idcategoria' => 3,
                 'iduser' => 2,
             ]);
@@ -144,6 +149,7 @@ class DatabaseSeeder extends Seeder
                 'estadoProducto' => "Nuevo",
                 'stock' => 5,
                 'foto' => "https://i.blogs.es/c97ab3/trucos-san-andreas-1/450_1000.jpg",
+                'idFoto' => '1',
                 'idcategoria' => 3,
                 'iduser' => 2,
             ]);
@@ -156,6 +162,7 @@ class DatabaseSeeder extends Seeder
                 'estadoProducto' => "Nuevo",
                 'stock' => 5,
                 'foto' => "https://www.muycomputer.com/wp-content/uploads/2019/11/Red-Dead-Redemption-2-2-1.jpg",
+                'idFoto' => '1',
                 'idcategoria' => 3,
                 'iduser' => 2,
             ]);
@@ -168,6 +175,7 @@ class DatabaseSeeder extends Seeder
                 'estadoProducto' => "Nuevo",
                 'stock' => 5,
                 'foto' => "https://images.contentstack.io/v3/assets/blt370612131b6e0756/blt02dd32b665c25036/5f4defe8b553152466d1b21a/Homepage_World_1.jpg",
+                'idFoto' => '1',
                 'idcategoria' => 3,
                 'iduser' => 2,
             ]);
@@ -180,6 +188,7 @@ class DatabaseSeeder extends Seeder
                 'estadoProducto' => "Nuevo",
                 'stock' => 5,
                 'foto' => "https://i.ytimg.com/vi/OB5JOP7W6J0/maxresdefault.jpg",
+                'idFoto' => '1',
                 'idcategoria' => 3,
                 'iduser' => 2,
             ]);
@@ -192,6 +201,7 @@ class DatabaseSeeder extends Seeder
                 'estadoProducto' => "Nuevo",
                 'stock' => 5,
                 'foto' => "https://cdn-products.eneba.com/resized-products/067e0818bd36d71e109c0eb18b67c887_350x200_3x-0.jpg",
+                'idFoto' => '1',
                 'idcategoria' => 3,
                 'iduser' => 2,
             ]);
@@ -208,6 +218,7 @@ class DatabaseSeeder extends Seeder
                 'estadoProducto' => "Nuevo",
                 'stock' => 5,
                 'foto' => "https://i.linio.com/p/f34e2530d13e0de8a35ab92d17d3d381-product.webp",
+                'idFoto' => '1',
                 'idcategoria' => 1,
                 'iduser' => 2,
             ]);
@@ -223,6 +234,7 @@ class DatabaseSeeder extends Seeder
                 'estadoProducto' => "Nuevo",
                 'stock' => 5,
                 'foto' => "https://i.linio.com/p/2a79a85e036514a318bc2832139477e7-product.webp",
+                'idFoto' => '1',
                 'idcategoria' => 1,
                 'iduser' => 2,
             ]);
@@ -239,6 +251,7 @@ class DatabaseSeeder extends Seeder
                 'estadoProducto' => "Nuevo",
                 'stock' => 5,
                 'foto' => "https://i.linio.com/p/780e0346f6b66081aa751bed37846715-product.webp",
+                'idFoto' => '1',
                 'idcategoria' => 1,
                 'iduser' => 2,
             ]);
@@ -252,6 +265,7 @@ class DatabaseSeeder extends Seeder
                 'estadoProducto' => "Nuevo",
                 'stock' => 5,
                 'foto' => "https://gamarraclick.com/5466-thickbox_default/bermuda-hombre-plomo-gino-exclusive.jpg",
+                'idFoto' => '1',
                 'idcategoria' => 1,
                 'iduser' => 2,
             ]);
@@ -269,6 +283,7 @@ class DatabaseSeeder extends Seeder
                 'estadoProducto' => "Nuevo",
                 'stock' => 5,
                 'foto' => "https://falabella.scene7.com/is/image/FalabellaPE/17323197_1?wid=1500&hei=1500&qlt=70",
+                'idFoto' => '1',
                 'idcategoria' => 1,
                 'iduser' => 2,
             ]);
@@ -285,6 +300,7 @@ class DatabaseSeeder extends Seeder
                 'estadoProducto' => "Usado",
                 'stock' => 2,
                 'foto' => "https://falabella.scene7.com/is/image/FalabellaPE/18673445_1?wid=1500&hei=1500&qlt=70",
+                'idFoto' => '1',
                 'idcategoria' => 2,
                 'iduser' => 2,
             ]);
@@ -302,6 +318,7 @@ class DatabaseSeeder extends Seeder
                 'estadoProducto' => "Nuevo",
                 'stock' => 8,
                 'foto' => "https://falabella.scene7.com/is/image/FalabellaPE/882539400_1?wid=1500&hei=1500&qlt=70",
+                'idFoto' => '1',
                 'idcategoria' => 2,
                 'iduser' => 2,
             ]);
@@ -314,6 +331,7 @@ class DatabaseSeeder extends Seeder
                 'estadoProducto' => "Usado",
                 'stock' => 3,
                 'foto' => "https://falabella.scene7.com/is/image/FalabellaPE/17697461_1?wid=1500&hei=1500&qlt=70",
+                'idFoto' => '1',
                 'idcategoria' => 2,
                 'iduser' => 2,
             ]);
@@ -326,6 +344,7 @@ class DatabaseSeeder extends Seeder
                 'estadoProducto' => "Nuevo",
                 'stock' => 8,
                 'foto' => "https://falabella.scene7.com/is/image/FalabellaPE/18523363_1?wid=1500&hei=1500&qlt=70",
+                'idFoto' => '1',
                 'idcategoria' => 2,
                 'iduser' => 2,
             ]);
@@ -338,6 +357,7 @@ class DatabaseSeeder extends Seeder
                 'estadoProducto' => "Nuevo",
                 'stock' => 3,
                 'foto' => "https://falabella.scene7.com/is/image/FalabellaPE/18659963_1?wid=1500&hei=1500&qlt=70",
+                'idFoto' => '1',
                 'idcategoria' => 2,
                 'iduser' => 2,
             ]);
@@ -347,6 +367,7 @@ class DatabaseSeeder extends Seeder
                 'idProducto'=>"9",
                 'precioUnitario'=>"16",
                 'cantidad'=>"5",
+                'descuento'=>"10",
                 'igv'=>"0.18",
                 'costoEnvio'=>"16",
                 'estadoVenta'=>"0",
@@ -359,6 +380,7 @@ class DatabaseSeeder extends Seeder
                 'idProducto'=>"2",
                 'precioUnitario'=>"15",
                 'cantidad'=>"6",
+                'descuento'=>"10",
                 'igv'=>"0.18",
                 'costoEnvio'=>"48",
                 'estadoVenta'=>"1",
