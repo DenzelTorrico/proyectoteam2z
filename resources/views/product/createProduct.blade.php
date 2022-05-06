@@ -5,7 +5,8 @@
         <h5 class="text-2xl font-bold">Vender producto</h5>
         <div class="flex space-x-10 w-full">
             <div class="w-1/4">
-                <img src="" class="rounded-md border-blue-500 border-2 w-full" alt="Polo">
+                <div id="preview" class="rounded-md border-blue-500 border-2 w-full">
+                </div>
             </div>
             <div class="space-y-4 bg-white px-4 w-3/4">
                 <form action="{{ route('product.save') }}" method="POST" enctype="multipart/form-data">
@@ -84,7 +85,7 @@
                         </div>
                         <div>
                             <label>Foto</label>
-                            <input type="file" name="file" aria-label="file" accept="image/jpeg,image/png">
+                            <input type="file" name="file" id="file" aria-label="file" accept="image/jpeg,image/png">
                             @error('foto')
                                 <span class="text-red-500 text-sm">{{ $message }}</span><br>
                             @enderror
@@ -163,4 +164,20 @@
             <input type="submit" class="bg-blue-400 py-1 px-3 rounded-md text-white" value="Enviar" />
         </form> --}}
     </section>
+@endsection
+
+@section('scripts')
+<script>
+    document.getElementById("file").onchange=function(e){
+        let reader = new FileReader();
+        reader.readAsDataURL(e.target.files[0]);
+        reader.onload=function(){
+            let preview = document.getElementById("preview");
+            imagen = document.createElement('img');
+            imagen.src = reader.result;
+            preview.innerHTML = "";
+            preview.append(imagen);
+        }
+    }
+</script>
 @endsection
