@@ -1,9 +1,13 @@
 @extends('layouts.master')
 
 @section('slot')
-    <script src="https://www.paypal.com/sdk/js?client-id={{ env('PAYPAL_CLIENT_ID') }}&buyer-country=US"></script>
-
-    <div id="paypal-button-container"></div>
+    <script src="https://www.paypal.com/sdk/js?client-id={{ env('PAYPAL_CLIENT_ID') }}&buyer-country=PE"></script>
+    <div class="text-center pt-10">
+        <h3 class="text-3xl text-gray-600">Elige metodo pago</h3>
+    </div>
+    <div class="flex justify-center my-10">
+        <div id="paypal-button-container"></div>
+    </div>
 
     <script>
         paypal.Buttons({
@@ -15,7 +19,7 @@
                     },
                     purchase_units: [{
                         amount: {
-                            value: 15.82
+                            value: {{ $request->total }}
                         }
                     }],
                 });
@@ -33,4 +37,8 @@
             }
         }).render('#paypal-button-container');
     </script>
+@endsection
+
+@section('scripts')
+    
 @endsection

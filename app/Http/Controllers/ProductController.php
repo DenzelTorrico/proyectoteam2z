@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categories;
+use App\Models\Historial;
 use App\Models\Productos;
 use App\Models\User;
+use App\Models\Venta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -60,8 +62,23 @@ class ProductController extends Controller
         return view('product.checkout',compact('id','producto','request'));
     }
 
-    public function paypal(){
-        return view('paypal');
+    public function paypal(Request $request, Venta $venta, Historial $historial){
+        $venta->idUsuario = Auth::user()->id;
+        $venta->idProducto = $request->idProducto;
+        $venta->precioUnitario = $request->precioUnitario;
+        $venta->cantidad = $request->cantidad;
+        $venta->descuento = $request->descuento;
+        $venta->igv = '0.18';
+        $venta->costoEnvio = '16';
+        $venta->estadoVenta = '0';
+        $venta->idMetodoPago = '1';
+        $venta->fechaPago = now();
+        $venta->fechaEnvio = $request->fechaEnvio;
+        $venta->save();
+
+        $historial->idVenta = $venta->id;
+        $historial->save();
+        return view('paypal',compact('request'));
     }
 
     public function process(){
@@ -89,6 +106,7 @@ class ProductController extends Controller
         $image = $request->file->storeOnCloudinary('products');
         $request->merge(['iduser' => ''.Auth::user()->id.'']);
         $request->merge(['foto' => $image->getPath()]);
+        $request->merge(['idFoto' => $image->getPublicId()]);
         //$response = cloudinary()->upload($request->file('file')->getRealPath())->getSecurePath();
 
         $producto = Productos::create($request->all());
@@ -106,9 +124,21 @@ class ProductController extends Controller
             'descuento' => '',
             'estadoProducto' => 'required',
             'stock' => 'required',
-            'foto' => 'url',
+            'file'=> '',
+            'foto' => '',
             'idcategoria' => 'required',
         ]);
+        $productoAll = Productos::select('idFoto')->where('id',$producto->id)->get();
+        foreach ($productoAll as $prod) {
+            $idFoto = $prod->idFoto;
+        }
+        cloudinary()->uploadApi()->destroy($idFoto);
+
+        if ($request->file) {
+            $image = $request->file->storeOnCloudinary('products');
+            $request->merge(['foto' => $image->getPath()]);
+            $request->merge(['idFoto' => $image->getPublicId()]);
+        }
         $producto -> update($request->all());
         return redirect()->route('product.publish',Auth::user()->id);
     }
@@ -117,6 +147,11 @@ class ProductController extends Controller
 //! DELETE
 
     public function deleteProduct($id){
+        $productoAll = Productos::select('idFoto')->where('id',$id)->get();
+        foreach ($productoAll as $producto) {
+            $idFoto = $producto->idFoto;
+        }
+        cloudinary()->uploadApi()->destroy($idFoto);
         $product = Productos::destroy($id);
         return redirect()->route('product.publish',Auth::user()->id);
     }

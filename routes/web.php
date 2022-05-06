@@ -43,10 +43,10 @@ Route::controller(ProductController::class)->group(function(){
     Route::get('/terminos', 'terminos')->name('index.terminos');
     Route::get('/checkout/{id}', 'checkout')->name('product.checkout');
 
-    Route::get('/paypal', 'paypal')->name('product.paypal');
+    // Route::get('/paypal', 'paypal')->name('product.paypal');
     Route::get('/paypal/process', 'process')->name('paypal.process');
 
-
+    Route::post('/paypal','paypal')->name('product.paypal');
     Route::post('/create', 'saveProduct')->name('product.save');
     Route::delete('/deleteProduct/{id}', 'deleteProduct')->name('product.destroy');
     Route::put('/updateProduct/{producto}', 'updateProduct')->name('product.update');

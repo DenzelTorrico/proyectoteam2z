@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('slot')
-    <section class="container mx-auto px-20 md:px-8 py-20">
+    <section class="w-full mx-auto px-20 md:px-8 py-20">
         <h4 class="text-3xl my-5">Historial de compras</h4>
         @if (count($historial) == 0)
             <div class="my-10 py-10 text-center rounded-lg border-2 space-y-5">
@@ -27,6 +27,9 @@
                                 Cantidad
                             </th>
                             <th scope="col" class="px-6 py-3">
+                                Descuento %
+                            </th>
+                            <th scope="col" class="px-6 py-3">
                                 IGV
                             </th>
                             <th scope="col" class="px-6 py-3">
@@ -50,25 +53,28 @@
                         @foreach ($historial as $item)
                             <tr class="bg-white border-b bg-gray-200 border-gray-300 hover:bg-gray-300">
                                 <td class="px-6 py-4">
-                                    {{ $item->idVenta }}
+                                    {{ $loop->index + 1}}
                                 </td>
                                 <td class="px-6 py-4">
                                     {{ $item->nombre }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    S/. {{ $item->precioUnitario }}
+                                    S/ {{ $item->precioUnitario }}
                                 </td>
                                 <td class="px-6 py-4">
                                     {{ $item->cantidad }} cant.
                                 </td>
                                 <td class="px-6 py-4">
+                                    {{ $item->descuento }} %
+                                </td>
+                                <td class="px-6 py-4">
                                     {{ $item->igv }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    S./ {{ $item->costoEnvio }}
+                                    S/ {{ $item->costoEnvio }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    S./ {{ ($item->precioUnitario * $item->cantidad) + $item->costoEnvio + (($item->precioUnitario * $item->cantidad) + $item->costoEnvio)*$item->igv }}
+                                    S./ {{ round((((($item->precioUnitario*$item->cantidad)-(($item->precioUnitario*$item->cantidad)* $item->descuento/100))+$item->costoEnvio)+((($item->precioUnitario*$item->cantidad)-(($item->precioUnitario*$item->cantidad)* $item->descuento/100)+$item->costoEnvio)*$item->igv)),2) }}
                                 </td>
                                 <td class="flex justify-center my-3">
                                     @if ($item->estadoVenta == 0)
